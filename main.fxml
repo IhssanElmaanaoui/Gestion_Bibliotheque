@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+	<top>
+		<VBox prefHeight="52.0" prefWidth="100.0" styleClass="top-bar" BorderPane.alignment="CENTER">
+			<children>
+				<VBox prefHeight="200.0" prefWidth="100.0" styleClass="top-bar-text">
+					<children>
+						<Label text="Gestion de Bibliothèque" />
+						<Label layoutX="10.0" layoutY="10.0" text="Tableau de bord" />
+					</children>
+				</VBox>
+				<MenuBar styleClass="top-menu">
+					<menus>
+						<Menu mnemonicParsing="false" text="Fichier">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#Quitter" text="Quitter" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Livres">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#handleMenuAddBook" text="Ajouter un livre" />
+								<MenuItem mnemonicParsing="false" text="Voir tous les livres" />
+								<MenuItem mnemonicParsing="false" text="Rechercher des livres" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Membres">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#handleMenuRegisterMember" text="Inscrire un membre" />
+								<MenuItem mnemonicParsing="false" text="Voir tous les membres" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Aide">
+							<items>
+								<MenuItem mnemonicParsing="false" text="A propos" />
+								<MenuItem mnemonicParsing="false" text="Documentation" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+			</children>
+		</VBox>
+	</top>
+	<left>
+		<VBox prefHeight="200.0" prefWidth="180.0" spacing="8.0" styleClass="side-menu" BorderPane.alignment="CENTER">
+			<children>
+				<Label styleClass="nav-header" text="Navigation" />
+				<Separator prefWidth="200.0" />
+				<Button mnemonicParsing="false" onAction="#handleDashboard" prefWidth="132.0" styleClass="nav-btn" text="Tableau de bord" />
+				<Button layoutX="10.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleMenuAddBook" prefWidth="132.0" styleClass="nav-btn" text="Livres" />
+				<Button layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleMenuRegisterMember" prefWidth="132.0" styleClass="nav-btn" text="Membres" />
+				<Button layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleMenuRegisterMember" prefWidth="132.0" styleClass="nav-btn" text="Emprints" />
+				<Region prefHeight="436.0" prefWidth="180.0" />
+				<Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" prefWidth="132.0" styleClass="nav-btn" text="Paramètres" />
+			</children>
+		</VBox>
+	</left>
+	<center>
+		<ScrollPane fx:id="centerScrollPane" fitToHeight="true" fitToWidth="true">
+			<!-- CONTENU DYNAMIQUE SERA CHARGÉ ICI -->
+		</ScrollPane>
+	</center>
+	<right>
+		<VBox minHeight="200.0" prefWidth="220.0" spacing="10.0" styleClass="stats-container" BorderPane.alignment="CENTER">
+			<children>
+
+				<Label styleClass="section-header" text="Statistiques" />
+
+				<VBox alignment="CENTER" maxHeight="130.0" prefHeight="130.0" styleClass="stat-card" VBox.vgrow="ALWAYS">
+					<children>
+						<Label styleClass="stat-title" text="Total de livres" />
+						<Label styleClass="stat-value" text="1 234" />
+						<Label styleClass="stat-sub" text="Dans la collection" />
+					</children>
+				</VBox>
+
+				<VBox alignment="CENTER" maxHeight="130.0" prefHeight="130.0" styleClass="stat-card" VBox.vgrow="ALWAYS">
+					<children>
+						<Label styleClass="stat-title" text="Membres actifs" />
+						<Label styleClass="stat-value" text="265" />
+						<Label styleClass="stat-sub" text="Utilisateurs inscrits" />
+					</children>
+				</VBox>
+
+				<VBox alignment="CENTER" maxHeight="130.0" prefHeight="130.0" styleClass="stat-card">
+					<children>
+						<Label styleClass="stat-title" text="Emprunts du jour" />
+						<Label styleClass="stat-value" text="18" />
+						<Label styleClass="stat-sub" text="Prêts actifs" />
+					</children>
+				</VBox>
+
+				<Separator />
+
+				<VBox alignment="CENTER" maxHeight="110.0" styleClass="stat-card-last">
+					<children>
+						<Label styleClass="stat-title" text="Livres disponibles" />
+						<Label styleClass="stat-value-last" text="1089" />
+					</children>
+				</VBox>
+
+			</children>
+		</VBox>
+	</right>
+	<bottom>
+		<HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="10.0" styleClass="bottom-bar" BorderPane.alignment="CENTER">
+			<children>
+				<Label text="Prêt" />
+				<Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+				<Label minWidth="120.0" text="Utilisateur : admin" />
+				<Separator orientation="VERTICAL" prefHeight="200.0" />
+				<Label minWidth="178.0" text="Gestion de Bibliothèque v1.0" />
+			</children>
+		</HBox>
+	</bottom>
+</BorderPane>

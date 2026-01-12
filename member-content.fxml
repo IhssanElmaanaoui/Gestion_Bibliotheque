@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MemberContentController">
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+         <content>
+            <VBox spacing="20.0">
+               <children>
+                  <Label styleClass="section-header" text="Inscrire un membre" />
+                  <Label styleClass="form-info" text="Informations du membre" />
+                  <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <VBox maxHeight="450.0" styleClass="add-student" VBox.vgrow="ALWAYS">
+                     <children>
+                        <GridPane hgap="20.0" minHeight="400.0" minWidth="900.0" vgap="10.0" VBox.vgrow="NEVER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="NEVER" minWidth="100.0" percentWidth="11.0" />
+                              <ColumnConstraints hgrow="ALWAYS" maxWidth="378.0" minWidth="250.0" percentWidth="36.5" prefWidth="376.0" />
+                              <ColumnConstraints hgrow="NEVER" maxWidth="284.0" minWidth="8.0" percentWidth="5.0" prefWidth="38.0" />
+                              <ColumnConstraints hgrow="NEVER" maxWidth="344.0" minWidth="100.0" percentWidth="11.0" prefWidth="302.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="36.5" prefWidth="200.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                              <RowConstraints minHeight="30.0" />
+                           </rowConstraints>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <Label text="Nom complet :" GridPane.halignment="LEFT" />
+                              <TextField fx:id="nameField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Saisir le nom complet" GridPane.columnIndex="1" GridPane.columnSpan="4" />
+                              <Label text="CIN / ID :" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <TextField fx:id="cinField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Saisir le numéro d'identification" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Téléphone :" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <TextField fx:id="phoneField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Saisir le numéro de téléphone" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <Label text="Email :" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                              <TextField fx:id="emailField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Saisir l'adresse email" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2" />
+                              <Label text="Adresse :" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                              <TextArea fx:id="addressField" prefRowCount="3" promptText="Saisir l'adresse complète" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                              <Label text="Type d'adhésion :" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                              <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <RadioButton fx:id="studentRadio" minWidth="80.0" text="Étudiant" />
+                                    <RadioButton fx:id="teacherRadio" minWidth="100.0" text="Enseignant" />
+                                    <RadioButton fx:id="externalRadio" minWidth="80.0" text="Externe" />
+                                 </children>
+                              </HBox>
+                              <Label text="Statut :" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" />
+                              <CheckBox fx:id="activeCheck" alignment="CENTER" selected="true" text="Membre actif" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                              <Label text="ID Étudiant :" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
+                              <TextField fx:id="studentIdField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Saisir l'ID si applicable" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Contact urgence :" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
+                              <TextField fx:id="emergencyNameField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Nom du contact" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                              <Label text="Tél. urgence :" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="7" />
+                              <TextField fx:id="emergencyPhoneField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" promptText="Téléphone du contact" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_RIGHT" spacing="10.0">
+                     <children>
+                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#handleReset" styleClass="btn-secondary" text="Réinitialiser" />
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackToDashboard" styleClass="btn-secondary" text="Retour au tableau de bord" />
+                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegister" styleClass="btn-primary" text="Inscrire le membre" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
